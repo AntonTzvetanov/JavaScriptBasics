@@ -45,6 +45,38 @@ if(dice1 ===6 && dice2 ===6) {
 }
 
 
+const schedule = ['Wake up', 'Eat', 'Learn', 'Code'] ;  //variable as array. We can add var, const, boolean... Each array starts from zero (0)
+console.log(schedule); 
+
+// acsess each variable one by one 
+schedule[0];
+console.log(schedule[0]); 
+
+//add more variables in the array 
+schedule.push('A new thing god added')
+console.log(schedule); 
+
+//remove the last added variable 
+schedule.pop();
+console.log(schedule); 
+
+//remove the first in line variable 
+schedule.shift();
+console.log(schedule); 
+
+//add a new one var at the begining 
+schedule.unshift("a new one")
+console.log(schedule); 
+
+//access by index 
+console.log(schedule.indexOf('Eat')); 
+
+const course = schedule.indexOf('Learn');
+console.log(course);
+console.log (schedule[course]);
+
+
+
 
 
 
