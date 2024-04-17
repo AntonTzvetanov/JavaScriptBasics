@@ -75,8 +75,33 @@ const course = schedule.indexOf('Learn');
 console.log(course);
 console.log (schedule[course]);
 
+//create a object 
+
+const user = {
+    // properties with different values 
+    firstName :"Mitko",
+    personAge : 24,
+    married: true, 
+    purchases: ["phone","car","laptop"]
+};
+
+// let's get the purchases that Mitko's has 
+console.log(user.purchases);
 
 
+//THIS 
+console.log(this); //it will show all the windows functions of THIS 
 
+const newUser = {
+    // properties with different values 
+    firstName :"Mitko",
+    personAge : 24,
+    married: true, 
+    purchases: ["phone","car","laptop"],
+    sayName: function() {
+        console.log(this.firstName);
+    }
 
+};
 
+newUser.sayName();
