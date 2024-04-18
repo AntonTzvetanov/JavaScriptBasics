@@ -6,7 +6,7 @@ for(name of names ) {
    if(name === "Maria") {
     console.log("Maria is on my list");
     // now after we found our record we need to stop the cycle, so we will add break; 
-   // break;
+     break;
    }
 
    let loading = 0; 
