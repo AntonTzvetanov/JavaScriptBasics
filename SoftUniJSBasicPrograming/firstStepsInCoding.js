@@ -105,3 +105,4 @@ function calculateLandscapingCost(input) {
 
 calculateLandscapingCost(['550']);
 calculateLandscapingCost(['150']); 
+
