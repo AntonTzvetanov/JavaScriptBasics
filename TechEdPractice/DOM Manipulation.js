@@ -10,3 +10,15 @@ changeColor.addEventListener('click', function() {
 text.classList.toggle('change');
 
 })
+
+
+const newUser = {
+    // properties with different values 
+    firstName :"Mitko",
+    personAge : 24,
+    married: true, 
+    purchases: ["phone","car","laptop"],
+    sayName: function() {
+        console.log(this.firstName);
+    }
+}
