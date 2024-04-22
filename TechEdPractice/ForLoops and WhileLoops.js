@@ -15,6 +15,7 @@ for(name of names ) {
     console.log("Website is still loading...");
     loading ++; 
    }
+   
       for( words of word ) { 
         console.log("test");
       }

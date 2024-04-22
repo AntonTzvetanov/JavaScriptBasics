@@ -111,7 +111,7 @@ const newCar = {
     EngineType: "TDI",
     Millage: "122000",
     sayCar: function() {
-        console.log(this.Brand);
+        console.log(Brand);
     }
 };
 
