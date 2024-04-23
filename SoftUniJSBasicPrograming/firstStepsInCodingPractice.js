@@ -117,7 +117,7 @@ function basketballEquipment(input) {
 
     let annualTrainingFee = Number(input[0]); 
 
-    let sneakersPrice = annualTrainingFee * 0.6; // 40% по-малко.  Следователно това са от 100 % - 40% = 60% 
+    let sneakersPrice = annualTrainingFee * 0.6; // 40% по-малко.  Следователно това са от 100 % - 40% = 60%    
     let equimnetPrice = sneakersPrice * 0.8; // 20% по-малко. Следователно това са от 100 % - 20% = 80% 
     let basketBallPrice = (1/4) * equimnetPrice; // една четвърт от цената на екипировката 
     let accsessoriesPrice = (1/5) * basketBallPrice; // една пета от цената на баскетболната топка 
