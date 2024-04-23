@@ -78,3 +78,53 @@ function schoolMaterials(input) {
 }
 
 schoolMaterials(["4", "2", "5", "13"]);
+
+
+function aquarium(input) {
+
+    let lenght = Number(input[0]);
+    let widt = Number(input[1]);
+    let hight = Number(input[2]);
+    let procent = Number(input[3]);
+
+    let volume = lenght * widt * hight;
+    let volumeInLiters = volume / 1000; 
+    let filledVolume = procent / 100; 
+    let requiredLiters = volumeInLiters * (1- filledVolume);
+    console.log(requiredLiters);
+
+}
+aquarium(["85","75","47","17"]);
+
+function foodDelivery(input) { 
+
+  let chickenMenu = Number(input[0]);
+  let fishMenu = Number(input[1]);
+  let veggyMenu = Number(input[2]);
+  
+  let priceForChikenMenu = chickenMenu * 10.35;
+  let priceForfishMenu = fishMenu * 12.40;
+  let priceForVeggyMenu = veggyMenu * 8.15;
+  let totalPriceForAll = priceForChikenMenu + priceForfishMenu + priceForVeggyMenu;
+  let dessertPrice = totalPriceForAll * 0.2;
+  let deliveryPrice = totalPriceForAll + dessertPrice + 2.5; 
+  console.log(deliveryPrice);
+}
+
+foodDelivery(["2","4","3"]);
+
+function basketballEquipment(input) { 
+
+    let annualTrainingFee = Number(input[0]); 
+
+    let sneakersPrice = annualTrainingFee * 0.6; // 40% по-малко.  Следователно това са от 100 % - 40% = 60% 
+    let equimnetPrice = sneakersPrice * 0.8; // 20% по-малко. Следователно това са от 100 % - 20% = 80% 
+    let basketBallPrice = (1/4) * equimnetPrice; // една четвърт от цената на екипировката 
+    let accsessoriesPrice = (1/5) * basketBallPrice; // една пета от цената на баскетболната топка 
+
+    let totalPrice = annualTrainingFee + sneakersPrice + equimnetPrice + basketBallPrice + accsessoriesPrice; 
+    console.log(totalPrice);
+
+}
+
+basketballEquipment(["365"]); 
