@@ -68,7 +68,7 @@ function areaOfFigures(input) {
 
     }
 
-    console.log(area.toFixed(3)); // fix to third symbol 
+    console.log(area.toFixed(3)); // fixed to the third symbol 
 }
 areaOfFigures(["circle", "6"]);
 
@@ -104,5 +104,5 @@ function numbersFrom100To200(input) {
         console.log("Greater than 200");
     }
 }
-
+                                                     
 numbersFrom100To200(["210"]);
