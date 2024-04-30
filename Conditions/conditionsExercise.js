@@ -183,7 +183,7 @@ timePlus15Minutes(["23", "59"]);
 
 
 
-function shopping(input) {  //need help from a mentor to see why the judge system is not happy with the code 
+function shopping(input) {  
 
     let budgetOfPeter = Number(input[0]);
     let videoCards = Number(input[1]);
@@ -192,11 +192,16 @@ function shopping(input) {  //need help from a mentor to see why the judge syste
 
     let videoCardsPrice = 250; // цена за видеокарта
     let totalVideoCardsPrice = videoCards * videoCardsPrice; // сума за две видеокарти 500 лв. 
+    
     let processorPrice = 0.35 * totalVideoCardsPrice; // 35%  от 500 = 175 лв. 
-
+    
     let ramPrice = 0.10 * totalVideoCardsPrice //Тук взима само 50 лева !!! 
     let sumForRam = ram * ramPrice // сума за рам памет = 3* 50 = 150 лв.
-    let totalPriceForAll = totalVideoCardsPrice + processorPrice + sumForRam;
+    let sumForProcessors = processorPrice * processors;
+   
+
+    let totalPriceForAll = totalVideoCardsPrice + sumForProcessors + sumForRam; // total price 
+    
 
     let disscountAmount = 0.15 * totalPriceForAll
     let disscountedPrice = 0;
@@ -204,14 +209,17 @@ function shopping(input) {  //need help from a mentor to see why the judge syste
     if (videoCards > processors) {
 
         disscountedPrice = totalPriceForAll - disscountAmount;
+        totalPriceForAll = disscountedPrice;
+        
     }
+    
 
-    if (budgetOfPeter > disscountedPrice) {
-        let remainingBudged = budgetOfPeter - disscountedPrice;
+    if (budgetOfPeter >= totalPriceForAll) {
+        let remainingBudged = budgetOfPeter - totalPriceForAll;
         console.log(`You have ${remainingBudged.toFixed(2)} leva left!`)
     } else {
-        let neededBudged = disscountedPrice - budgetOfPeter;
+        let neededBudged = totalPriceForAll - budgetOfPeter;
         console.log(`Not enough money! You need ${neededBudged.toFixed(2)} leva more!`);
     }
 }
-shopping(["920.45", "3", "1", "1"]);
+shopping(["924.37", "3", "1", "1"]);
