@@ -183,7 +183,7 @@ timePlus15Minutes(["23", "59"]);
 
 
 
-function shopping(input) {  
+function shopping(input) {
 
     let budgetOfPeter = Number(input[0]);
     let videoCards = Number(input[1]);
@@ -192,16 +192,14 @@ function shopping(input) {
 
     let videoCardsPrice = 250; // цена за видеокарта
     let totalVideoCardsPrice = videoCards * videoCardsPrice; // сума за две видеокарти 500 лв. 
-    
+
     let processorPrice = 0.35 * totalVideoCardsPrice; // 35%  от 500 = 175 лв. 
-    
+
     let ramPrice = 0.10 * totalVideoCardsPrice //Тук взима само 50 лева !!! 
     let sumForRam = ram * ramPrice // сума за рам памет = 3* 50 = 150 лв.
     let sumForProcessors = processorPrice * processors;
-   
-
     let totalPriceForAll = totalVideoCardsPrice + sumForProcessors + sumForRam; // total price 
-    
+
 
     let disscountAmount = 0.15 * totalPriceForAll
     let disscountedPrice = 0;
@@ -210,9 +208,9 @@ function shopping(input) {
 
         disscountedPrice = totalPriceForAll - disscountAmount;
         totalPriceForAll = disscountedPrice;
-        
+
     }
-    
+
 
     if (budgetOfPeter >= totalPriceForAll) {
         let remainingBudged = budgetOfPeter - totalPriceForAll;
