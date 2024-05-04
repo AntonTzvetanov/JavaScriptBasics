@@ -365,3 +365,70 @@ function workingOfficeTime(input) {
 
 }
 workingOfficeTime(["11", "Sunday"]);
+
+
+
+function calculateCommission(input) {
+
+    let city = input[0];
+    let salesVolume = Number(input[1]);
+    let commissionRate = 0;
+
+    switch (city) {
+        case "Sofia":
+            if (salesVolume >= 0 && salesVolume <= 500) {
+                commissionRate = 0.05;
+            } else if (salesVolume > 500 && salesVolume <= 1000) {
+                commissionRate = 0.07;
+            } else if (salesVolume > 1000 && salesVolume <= 10000) {
+                commissionRate = 0.08;
+            } else if (salesVolume > 10000) {
+                commissionRate = 0.12;
+            } else {
+                console.log("error");
+                return;
+            }
+            break;
+
+        case "Varna":
+            if (salesVolume >= 0 && salesVolume <= 500) {
+                commissionRate = 0.045;
+            } else if (salesVolume > 500 && salesVolume <= 1000) {
+                commissionRate = 0.075;
+            } else if (salesVolume > 1000 && salesVolume <= 10000) {
+                commissionRate = 0.10;
+            } else if (salesVolume > 10000) {
+                commissionRate = 0.13;
+            } else {
+                console.log("error");
+                return;
+            }
+            break;
+
+        case "Plovdiv":
+            if (salesVolume >= 0 && salesVolume <= 500) {
+                commissionRate = 0.055;
+            } else if (salesVolume > 500 && salesVolume <= 1000) {
+                commissionRate = 0.08;
+            } else if (salesVolume > 1000 && salesVolume <= 10000) {
+                commissionRate = 0.12;
+            } else if (salesVolume > 10000) {
+                commissionRate = 0.145;
+            } else {
+                console.log("error");
+                return;
+            }
+            break;
+
+        default:
+            console.log("error");
+            return;
+    }
+    let commission = commissionRate * salesVolume;
+
+
+    console.log(commission.toFixed(2));
+}
+
+
+calculateCommission(["Kaspichan", "-55"]); // Очакван изход: 42.00
