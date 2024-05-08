@@ -430,5 +430,4 @@ function calculateCommission(input) {
     console.log(commission.toFixed(2));
 }
 
-
-calculateCommission(["Kaspichan", "-55"]); // Очакван изход: 42.00
+calculateCommission(["Kaspichan", "-55"]); 
