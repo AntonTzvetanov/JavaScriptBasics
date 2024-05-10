@@ -249,3 +249,106 @@ function skiHoliday(input) {
 }
 skiHoliday(["2", "apartment", "positive"]);
 
+function operationsBetweenNumbers(input) { // need to check why I get 90 of 100 from the Judge :()
+
+    let num1 = Number(input[0]);
+    let num2 = Number(input[1]);
+    let operator = input[2];
+
+    let result = 0;
+    let evenOrOdd = "";
+
+    switch (operator) {
+
+        case "+":
+            result = num1 + num2;
+            if (evenOrOdd % 2 === 0) {
+                evenOrOdd = "even";
+            } else {
+                evenOrOdd = " odd";
+            }
+            console.log(`${num1} + ${num2} = ${result} - ${evenOrOdd}`);
+            break;
+        case "-":
+            result = num1 - num2;
+            if (result % 2 === 0) {
+                evenOrOdd = "even";
+            } else {
+                evenOrOdd = " odd";
+            }
+            console.log(`${num1} - ${num2} = ${result} -${evenOrOdd}`);
+
+            break;
+        case "*":
+
+            result = num1 * num2;
+            if (result % 2 === 0) {
+                evenOrOdd = "even";
+            } else {
+                evenOrOdd = " odd";
+            }
+            console.log(`${num1} * ${num2} = ${result} -${evenOrOdd}`);
+
+            break;
+        case "/":
+            if (num2 === 0) {
+                console.log(`Cannot divide ${num1} by zero`);
+            } else {
+                result = num1 / num2;
+                console.log(`${num1} / ${num2} = ${result.toFixed(2)}`);
+            }
+
+            break;
+        case "%":
+            if (num2 === 0) {
+                console.log(`Cannot divide ${num1} by zero`)
+            } else if (result % 2 === 0) {
+                result = num1 % num2;
+                console.log(`${num1} % ${num2} = ${result}`);
+            }
+            break;
+    }
+}
+operationsBetweenNumbers(["3", "7", "*"]);
+
+function vacationPlanner(input) {
+    let budgetForVacation = Number(input[0]);
+    let seasonForVacation = input[1];
+    let destination = "";
+    let accommodation = "";
+    let cost = 0;
+
+
+    if (budgetForVacation <= 100) {
+        destination = "Bulgaria";
+        if (seasonForVacation === "summer") {
+            accommodation = "Camp";
+            cost = budgetForVacation * 0.30;
+        } else if (seasonForVacation === "winter") {
+            accommodation = "Hotel";
+            cost = budgetForVacation * 0.70;
+        }
+    } else if (budgetForVacation <= 1000) {
+        destination = "Balkans";
+        if (seasonForVacation === "summer") {
+            accommodation = "Camp";
+            cost = budgetForVacation * 0.40;
+        } else if (seasonForVacation === "winter") {
+            accommodation = "Hotel";
+            cost = budgetForVacation * 0.80;
+        }
+    } else {
+        destination = "Europe";
+        accommodation = "Hotel";
+        cost = budgetForVacation * 0.90;
+    }
+    console.log(`Somewhere in ${destination}`);
+    console.log(`${accommodation} - ${cost.toFixed(2)}`);
+}
+vacationPlanner(["1500", "summer"]);
+
+function exam(input) {
+
+
+
+}
