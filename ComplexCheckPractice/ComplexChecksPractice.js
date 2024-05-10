@@ -349,6 +349,35 @@ vacationPlanner(["1500", "summer"]);
 
 function exam(input) {
 
+    let hourOfExam = Number(input[0]);
+    let minutesOfExam = Number(input[1]);
+    let hourOfArriving = Number(input[2]);
+    let minutesOfArriving = Number(input[3]);
 
+    let examTime = hourOfExam * 60 + minutesOfExam;
+    let arrivingTime = hourOfArriving * 60 + minutesOfArriving;
+    let difference = arrivingTime - examTime;
+
+       let absDifference = Math.abs(difference);
+       let hoursForExam = Math.floor(absDifference / 60);
+       let minutes = absDifference % 60;
+       
+    if (difference > 0) {
+        console.log("Late")
+    } else if (difference >= -30) {
+        console.log("On time");
+    } else {
+        console.log("Early");
+    }
+    
+    if(difference !==0) { 
+     
+    }
+    if (hoursForExam === 0) {
+          console.log(`${minutes} minutes ${difference >= 0 ? "after" : "before"} the start`);
+    } else { 
+        console.log(`${hoursForExam}:${minutes < 10 ? "0" : ""}${minutes} hours ${difference >= 0 ? "after" : "before"} the start`);
+    }
 
 }
+ exam (["9","30","9","50"]);
