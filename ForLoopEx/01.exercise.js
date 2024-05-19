@@ -58,46 +58,69 @@ function Histogram(input) {
     console.log(`${groupProcent5.toFixed(2)}%`);
 
 }
-Histogram(["9", "367", "99", "200","799","999","333","555","111","9"]);
+Histogram(["9", "367", "99", "200", "799", "999", "333", "555", "111", "9"]);
 
-function smartLily(input) { 
+function smartLily(input) {
 
     // Вероятна задача за изпита! 
-    let lilyAge = Number(input[0]); 
-    let priceForWasher = Number(input[1]); 
+    let lilyAge = Number(input[0]);
+    let priceForWasher = Number(input[1]);
     let priceFortoy = Number(input[2]);
-    
-    let oddBirthdaySum = 10; 
-    let moneySavedFromBirthdays = 0; 
 
-    for(let birthday = 1; birthday <= lilyAge; birthday++) { 
+    let oddBirthdaySum = 10;
+    let moneySavedFromBirthdays = 0;
 
-        if(birthday % 2 === 0) { 
-            moneySavedFromBirthdays += oddBirthdaySum -1; //тук братчето краде по левче 
+    for (let birthday = 1; birthday <= lilyAge; birthday++) {
+
+        if (birthday % 2 === 0) {
+            moneySavedFromBirthdays += oddBirthdaySum - 1; //тук братчето краде по левче 
             oddBirthdaySum += 10;
-        } else { 
-            moneySavedFromBirthdays += priceFortoy; 
+        } else {
+            moneySavedFromBirthdays += priceFortoy;
         }
     }
 
-    if(moneySavedFromBirthdays >= priceForWasher) { 
-        let leftSum = moneySavedFromBirthdays - priceForWasher; 
+    if (moneySavedFromBirthdays >= priceForWasher) {
+        let leftSum = moneySavedFromBirthdays - priceForWasher;
         console.log(`Yes! ${leftSum.toFixed(2)} `)
-    } else { 
-        let sumNeeded = priceForWasher - moneySavedFromBirthdays; 
-        console.log(`No! ${sumNeeded.toFixed(2)}`); 
+    } else {
+        let sumNeeded = priceForWasher - moneySavedFromBirthdays;
+        console.log(`No! ${sumNeeded.toFixed(2)}`);
     }
 
 }
-smartLily(["10", "170.00","6"]);
+smartLily(["10", "170.00", "6"]);
 
-function tennisRanklist(input) { 
+function tennisRanklist(input) {
 
-let turnamentCount = Number(input[0]); 
-let startingPoints= Number(input[1]); 
+    let turnamentCount = Number(input[0]);
+    let startingPoints = Number(input[1]);
+    let seasonPoints = 0;
+    let winCount = 0;
 
+    for (let index = 2; index < input.length; index++) {
 
+        let result = input[index];
 
+        if (result === "W") {
+            seasonPoints += 2000;
+            winCount++;
+        } else if (result === "F") {
+            seasonPoints += 1200;
+        } else {
+            seasonPoints += 720;
+        }
+    }
+
+    let finalPoints = startingPoints + seasonPoints;
+    console.log(`Final points: ${finalPoints}`);
+
+    let averagePoints = seasonPoints / turnamentCount;
+    console.log(`Average points: ${Math.floor(averagePoints)}`);
+
+    let procentWon = (winCount / turnamentCount) * 100;
+    console.log(`${procentWon.toFixed(2)}%`);
 
 
 }
+tennisRanklist(["5", "1400", "F", "SF", "W", "W", "SF"]);
