@@ -191,7 +191,7 @@ function calculateClimberPercentages(input) {
         return ((climbers / totalClimbers) * 100).toFixed(2) + '%';
     }
 
-    
+
     console.log(calculatePercentage(musalaClimbers));
     console.log(calculatePercentage(montBlancClimbers));
     console.log(calculatePercentage(kilimanjaroClimbers));
@@ -209,3 +209,34 @@ calculateClimberPercentages([
     "6"
 ]);
 
+function salary(input) {
+    let index = 0;
+    let numberOpenTabs = Number(input[index++]); // извличаме броя на отворените табове и увеличаваме индекса
+    let salary = Number(input[index++]); // извличаме заплатата и увеличаваме индекса
+
+    for (let i = 0; i < numberOpenTabs; i++) {
+        let website = input[index++]; // извличаме уебсайта и увеличаваме индекса
+
+        if (website === "Facebook") {
+            salary -= 150;
+        } else if (website === "Instagram") {
+            salary -= 100;
+        } else if (website === "Reddit") {
+            salary -= 50;
+        }
+
+        if (salary <= 0) { // проверяваме дали заплатата е станала по-малка или равна на 0
+            console.log(`You have lost your salary.`);
+            return;
+        }
+    }
+
+    console.log(Math.floor(salary)); // отпечатваме остатъка от заплатата като цяло число
+}
+
+salary(["3",
+    "500",
+    "Facebook",
+    "Stackoverflow.com",
+    "softuni.bg"
+]);
