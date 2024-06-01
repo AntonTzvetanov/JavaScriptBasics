@@ -92,14 +92,12 @@ function smartLily(input) {
 smartLily(["10", "170.00", "6"]);
 
 function tennisRanklist(input) {
-
     let turnamentCount = Number(input[0]);
     let startingPoints = Number(input[1]);
     let seasonPoints = 0;
     let winCount = 0;
 
     for (let index = 2; index < input.length; index++) {
-
         let result = input[index];
 
         if (result === "W") {
@@ -107,7 +105,7 @@ function tennisRanklist(input) {
             winCount++;
         } else if (result === "F") {
             seasonPoints += 1200;
-        } else {
+        } else if (result === "SF") {
             seasonPoints += 720;
         }
     }
@@ -120,7 +118,94 @@ function tennisRanklist(input) {
 
     let procentWon = (winCount / turnamentCount) * 100;
     console.log(`${procentWon.toFixed(2)}%`);
-
-
 }
+
 tennisRanklist(["5", "1400", "F", "SF", "W", "W", "SF"]);
+
+function calculateActorPoints(input) {
+    let index = 0;
+    let actorName = input[index++];
+    let academyPoints = Number(input[index++]);
+    let numberOfEvaluators = Number(input[index++]);
+
+    for (let i = 0; i < numberOfEvaluators; i++) {
+        let evaluatorName = input[index++];
+        let evaluatorPoints = Number(input[index++]);
+
+        let pointsFromEvaluator = (evaluatorName.length * evaluatorPoints) / 2;
+        academyPoints += pointsFromEvaluator;
+
+        if (academyPoints > 1250.5) {
+            console.log(`Congratulations, ${actorName} got a nominee for leading role with ${academyPoints.toFixed(1)}!`);
+            break;
+        }
+    }
+
+    let neededPoints = 1250.5 - academyPoints;
+    console.log(`Sorry, ${actorName} you need ${neededPoints.toFixed(1)} more!`);
+}
+
+// Примерен вход
+calculateActorPoints(["Zahari Baharov",
+    "205",
+    "4",
+    "Johnny Depp",
+    "45",
+    "Will Smith",
+    "29",
+    "Jet Lee",
+    "10",
+    "Matthew Mcconaughey",
+    "39"
+]);
+
+function calculateClimberPercentages(input) {
+    let index = 0;
+    let numberOfGroups = Number(input[index++]);
+
+    let musalaClimbers = 0;
+    let montBlancClimbers = 0;
+    let kilimanjaroClimbers = 0;
+    let k2Climbers = 0;
+    let everestClimbers = 0;
+    let totalClimbers = 0;
+
+    for (let i = 0; i < numberOfGroups; i++) {
+        let groupSize = Number(input[index++]);
+        totalClimbers += groupSize;
+
+        if (groupSize <= 5) {
+            musalaClimbers += groupSize;
+        } else if (groupSize <= 12) {
+            montBlancClimbers += groupSize;
+        } else if (groupSize <= 25) {
+            kilimanjaroClimbers += groupSize;
+        } else if (groupSize <= 40) {
+            k2Climbers += groupSize;
+        } else {
+            everestClimbers += groupSize;
+        }
+    }
+
+    function calculatePercentage(climbers) {
+        return ((climbers / totalClimbers) * 100).toFixed(2) + '%';
+    }
+
+    
+    console.log(calculatePercentage(musalaClimbers));
+    console.log(calculatePercentage(montBlancClimbers));
+    console.log(calculatePercentage(kilimanjaroClimbers));
+    console.log(calculatePercentage(k2Climbers));
+    console.log(calculatePercentage(everestClimbers));
+}
+
+// Примерен вход
+calculateClimberPercentages([
+    "5",
+    "25",
+    "41",
+    "31",
+    "250",
+    "6"
+]);
+
