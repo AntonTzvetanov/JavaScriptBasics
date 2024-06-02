@@ -227,7 +227,7 @@ function salary(input) {
 
         if (salary <= 0) { // проверяваме дали заплатата е станала по-малка или равна на 0
             console.log(`You have lost your salary.`);
-            return;
+            break;
         }
     }
 
