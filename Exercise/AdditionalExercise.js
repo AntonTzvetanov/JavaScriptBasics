@@ -151,3 +151,66 @@ function weatherForecast2(input) {
 
 // Примерно извикване на функцията
 weatherForecast2(["22.4"]); // Входни данни: градуси
+
+function paintHouse(input) {
+    let x = parseFloat(input[0]);
+    let y = parseFloat(input[1]);
+    let h = parseFloat(input[2]);
+
+    // Площ на предната и задната стена
+    let frontBackArea = 2 * (x * x) - (1.2 * 2); // Отнемаме площта на вратата от предната стена
+
+    // Площ на страничните стени
+    let sideWallsArea = 2 * (x * y) - 2 * (1.5 * 1.5); // Отнемаме площите на прозорците от всяка странична стена
+
+    // Обща площ на стените
+    let totalWallsArea = frontBackArea + sideWallsArea;
+
+    // Необходими литри зелена боя
+    let greenPaintLiters = totalWallsArea / 3.4;
+
+    // Площ на покрива (2 правоъгълника и 2 триъгълника)
+    let roofRectanglesArea = 2 * (x * y);
+    let roofTrianglesArea = 2 * (x * h / 2);
+
+    // Обща площ на покрива
+    let totalRoofArea = roofRectanglesArea + roofTrianglesArea;
+
+    // Необходими литри червена боя
+    let redPaintLiters = totalRoofArea / 4.3;
+
+    // Отпечатване на резултатите
+    console.log(greenPaintLiters.toFixed(2));
+    console.log(redPaintLiters.toFixed(2));
+}
+
+// Примерен вход
+paintHouse(["6", "10", "5.2"]);
+
+function pipeline(input) {
+
+
+    let V = Number(input[0]);
+    let P1 = Number(input[1]);
+    let P2 = Number(input[2]);
+    let H = Number(input[3]);
+
+    let waterFromPipe1 = P1 * H;
+    let waterFromPipe2 = P2 * H;
+    let totalWater = waterFromPipe1 + waterFromPipe2;
+ 
+    if (totalWater <= V) { 
+         let poolFillPercentage = (totalWater / V) * 100;
+         let pipe1Percentage = (waterFromPipe1 / totalWater) * 100;
+         let pipe2Percentage = (waterFromPipe2 / totalWater) * 100;
+
+         console.log(`The pool is ${poolFillPercentage.toFixed(2)}% full. Pipe 1: ${pipe1Percentage.toFixed(2)}%. Pipe 2: ${pipe2Percentage.toFixed(2)}%.`);
+
+    } else { 
+
+        let overflow = totalWater - V;
+        console.log(`For ${H} hours the pool overflows with ${overflow.toFixed(2)} liters.`);
+    }
+
+}
+pipeline(["1000", "100", "120", "3"]);
