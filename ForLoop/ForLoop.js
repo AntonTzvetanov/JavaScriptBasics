@@ -79,7 +79,7 @@ function vowelSum(input) {
     }
     console.log(sum);
 }
-vowelSum(["hello"]);
+vowelSum(["Jokers"]);
 
 
 function sumOfNumbers(input) { 
