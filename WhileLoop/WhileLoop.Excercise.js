@@ -138,9 +138,9 @@ function steps(input) {
 
     let targetSteps = 10000;
     let stepsSum = 0;
-    let indexx = 0;
+    let index = 0;
 
-    let row = input[indexx];
+    let row = input[index];
 
     while (row !== "Going home") {
         let steps = Number(row);
@@ -150,12 +150,12 @@ function steps(input) {
             console.log(`Goal reached! Good job!\n${stepsSum - targetSteps} steps over the goal!`);
             break;
         }
-        indexx++;
-        row = input[indexx];
+        index++;
+        row = input[index];
     }
 
     if (row === "Going home") {
-        let stepsToHome = Number(input[indexx + 1]);
+        let stepsToHome = Number(input[index + 1]);
         stepsSum += stepsToHome;
 
         if (stepsSum >= targetSteps) {
@@ -194,7 +194,7 @@ function vacation(input) {
         if (currentRow === "spend") {
             spendDays++;
 
-            if (spendDays === 5) { 
+            if (spendDays === 5) {
                 console.log(`You can't save the money.`);
                 console.log(days);
                 break;
@@ -215,7 +215,7 @@ function vacation(input) {
             availableMoney += moneyToSave;
         }
         index++;
-        currentRow = input[index]; 
+        currentRow = input[index];
     }
 
     if (availableMoney >= moneyNeeded) {

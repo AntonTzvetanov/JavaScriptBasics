@@ -21,30 +21,30 @@ GreetingByName(["Nakov"]);
 
 function printNumber() {
 
-    console.log(1);
-    console.log(2);
-    console.log(3);
-    console.log(4);
-    console.log(5);
-    console.log(6);
-    console.log(7);
-    console.log(8);
-    console.log(9);
-    console.log(10);
+  console.log(1);
+  console.log(2);
+  console.log(3);
+  console.log(4);
+  console.log(5);
+  console.log(6);
+  console.log(7);
+  console.log(8);
+  console.log(9);
+  console.log(10);
 
 }
 printNumber();
 
 function concatenateData(input) {
 
-let firstName = input[0];
-let lastName = input[1];
-let age = Number(input[2]);
-let town = input[3];
+  let firstName = input[0];
+  let lastName = input[1];
+  let age = Number(input[2]);
+  let town = input[3];
 
-console.log(`You are ${firstName} ${lastName}, a ${age}-years old person from ${town}.`);
+  console.log(`You are ${firstName} ${lastName}, a ${age}-years old person from ${town}.`);
 }
-concatenateData(["Anton","Tsvetanov",30,"Sofia"]);
+concatenateData(["Anton", "Tsvetanov", 36, "Sofia"]);
 
 function squareArea(input) {
   let a = Number(input[0]);
@@ -54,42 +54,42 @@ function squareArea(input) {
 squareArea("10");
 
 function theProject(input) {
-let architectName = [0];
-let hours= Number(input[1]);
-let projects = Number(input[2]);
-console.log(`The architect ${architectName} will need ${hours} hours to complete ${projects} project/s.`);
+  let architectName = [0];
+  let hours = Number(input[1]);
+  let projects = Number(input[2]);
+  console.log(`The architect ${architectName} will need ${hours} hours to complete ${projects} project/s.`);
 
 }
 
-theProject (["Anton","10","4"]);
+theProject(["Anton", "10", "4"]);
 
 function theProject2(input) {
-  let architectName = input[0]; 
-  let hours = 3 * Number(input[1]); 
-  let projects = Number(input[1]); 
+  let architectName = input[0];
+  let hours = 3 * Number(input[1]);
+  let projects = Number(input[1]);
 
   console.log(`The architect ${architectName} will need ${hours} hours to complete ${projects} project/s.`);
 }
 
 
-let input = ['Anton', '5']; 
-theProject2(input); 
+let input = ['Anton', '5'];
+theProject2(input);
 
 function theZoo(input) {
 
   let dogFood = 2.50 * Number(input[0]);
   let catFood = 4 * Number(input[1]);
   let totalAmount = dogFood + catFood;
-  console.log (`${totalAmount} lv`);
+  console.log(`${totalAmount} lv`);
 
 }
-theZoo(["13","9"]);
+theZoo(["13", "9"]);
 
 function calculateLandscapingCost(input) {
 
   let squareMeters = Number(input[0]);
 
-  
+
   let pricePerSquareMeterWithVAT = 7.61;
 
   let totalPrice = squareMeters * pricePerSquareMeterWithVAT;
@@ -104,5 +104,6 @@ function calculateLandscapingCost(input) {
 
 
 calculateLandscapingCost(['550']);
-calculateLandscapingCost(['150']); 
+calculateLandscapingCost(['150']);
+
 
